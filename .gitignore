@@ -24,3 +24,5 @@ chroma_store/
 dist/
 build/
 *.egg-info/
+
+storage/resumes/
