@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Database / Vector DB
+*.sqlite3
+chroma_store/
+
+# Build files
+dist/
+build/
+*.egg-info/

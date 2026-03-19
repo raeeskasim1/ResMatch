@@ -1,0 +1,118 @@
+python
+java
+c
+c++
+c#
+sql
+mysql
+postgresql
+mongodb
+oracle
+html
+css
+javascript
+typescript
+react
+angular
+vue
+node.js
+express.js
+django
+flask
+fastapi
+spring boot
+rest api
+graphql
+git
+github
+linux
+docker
+kubernetes
+aws
+azure
+gcp
+machine learning
+deep learning
+artificial intelligence
+natural language processing
+computer vision
+data science
+data analysis
+data mining
+data engineering
+feature engineering
+model deployment
+model evaluation
+neural networks
+cnn
+rnn
+lstm
+transformers
+bert
+sbert
+llm
+generative ai
+genai
+opencv
+tensorflow
+pytorch
+keras
+scikit-learn
+xgboost
+lightgbm
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+power bi
+tableau
+excel
+nltk
+spacy
+hugging face
+langchain
+rag
+vector database
+chromadb
+faiss
+redis
+elasticsearch
+apache spark
+hadoop
+airflow
+etl
+data warehouse
+cyber security
+network security
+penetration testing
+ethical hacking
+soc
+siem
+incident response
+threat detection
+vulnerability assessment
+firewall
+wireshark
+burp suite
+metasploit
+splunk
+cryptography
+networking
+tcp/ip
+operating systems
+bash
+shell scripting
+problem solving
+data structures
+algorithms
+oop
+object oriented programming
+software development
+unit testing
+pytest
+mlops
+devops
+ci/cd
+streamlit
+fastapi

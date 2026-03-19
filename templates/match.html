@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Match Candidates{% endblock %}
+{% block nav_match %}active{% endblock %}
+{% block page_title %}Match Candidates{% endblock %}
+{% block page_subtitle %}Paste a job description and rank the best candidates{% endblock %}
+
+{% block content %}
+{% if error %}
+<div class="alert" style="background:#fee2e2; color:#991b1b;">
+    {{ error }}
+</div>
+{% endif %}
+<section class="panel">
+    <div class="panel-header">
+        <h3>Job Description</h3>
+        <p>Enter the JD and choose how many top candidates you want to display.</p>
+    </div>
+
+    <form action="/match" method="post" class="form-block">
+        <textarea name="jd_text" rows="12" placeholder="Paste job description here..." required>{{ jd_text }}</textarea>
+
+        <div class="form-row">
+            <div class="input-box">
+                <label for="top_k">Top Matches</label>
+                <input type="number" id="top_k" name="top_k" value="{{ top_k }}" min="1" max="50">
+            </div>
+
+            <button type="submit" class="btn btn-blue">Find Best Matches</button>
+        </div>
+    </form>
+</section>
+
+{% if results %}
+<section class="results-section">
+    {% for result in results %}
+    <article class="candidate-card">
+        <div class="candidate-top">
+            <div class="candidate-actions">
+    <a href="/download-resume/{{ result.file_name }}" class="btn btn-blue">
+    ⬇ Download Resume
+</a>
+</div>
+            <div>
+    <h3>#{{ loop.index }} - {{ result.candidate_name }}</h3>
+
+    <span style="color:#64748b; font-size:13px;">
+        {{ result.file_name }}
+    </span>
+
+    <br>
+
+    <span class="decision-pill">{{ result.decision }}</span>
+</div>
+            <div class="score-badge">
+                {{ result.final_score }}
+            </div>
+        </div>
+
+        <div class="score-grid">
+            <div class="score-box">
+                <span>Semantic</span>
+                <strong>{{ result.semantic_score }}</strong>
+            </div>
+            <div class="score-box">
+                <span>Skill</span>
+                <strong>{{ result.skill_score }}</strong>
+            </div>
+            <div class="score-box">
+                <span>Experience</span>
+                <strong>{{ result.experience_score }}</strong>
+            </div>
+            <div class="score-box">
+                <span>Education</span>
+                <strong>{{ result.education_score }}</strong>
+            </div>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-card">
+                <h4>Matched Skills</h4>
+                <p>
+                    {{ result.explanation.matched_skills | join(', ') if result.explanation.matched_skills is iterable and result.explanation.matched_skills is not string else result.explanation.matched_skills }}
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h4>Missing Skills</h4>
+                <p>
+                    {{ result.explanation.missing_skills | join(', ') if result.explanation.missing_skills is iterable and result.explanation.missing_skills is not string else result.explanation.missing_skills }}
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h4>Experience Gap</h4>
+                <p>{{ result.explanation.experience_gap }}</p>
+            </div>
+
+            <div class="detail-card">
+                <h4>Education Match</h4>
+                <p>{{ result.explanation.education_match }}</p>
+            </div>
+        </div>
+
+        <details class="resume-preview">
+            <summary>View Resume Preview</summary>
+            <pre>{{ result.resume_preview }}</pre>
+        </details>
+    </article>
+    {% endfor %}
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Resumes{% endblock %}
+{% block nav_upload %}active{% endblock %}
+{% block page_title %}Upload Resumes{% endblock %}
+{% block page_subtitle %}Add and index resumes for matching{% endblock %}
+
+{% block content %}
+{% if message %}
+    <div class="alert">{{ message }}</div>
+{% endif %}
+
+<section class="panel upload-panel">
+    <div class="panel-header">
+        <p>Select multiple resume files and index them into the system.</p>
+    </div>
+
+    <form action="/upload-resumes" method="post" enctype="multipart/form-data" class="form-block">
+        <div class="drop-zone">
+            <input type="file" name="files" multiple required>
+            <p>Choose resume files</p>
+            <span>Supported formats: PDF, DOCX, TXT</span>
+        </div>
+
+        <button type="submit" class="btn btn-green btn-wide">Index Resumes</button>
+    </form>
+</section>
+
+<section class="panel">
+    <div class="panel-header">
+        <h3>Manage</h3>
+        <p>Current indexed resume count is shown below.</p>
+    </div>
+
+    <div class="count-card">
+        <span class="count-label">Total Indexed Resumes</span>
+        <h2 class="count-number">{{ resume_count }}</h2>
+    </div>
+
+    {% if resume_count > 0 %}
+        <div class="danger-zone">
+            <form action="/clear-resumes" method="post"
+                  onsubmit="return confirm('Are you sure you want to delete all indexed resumes?')">
+                <button type="submit" class="btn btn-red">
+                    Clear All Indexed Resumes
+                </button>
+            </form>
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <p>No resumes indexed yet.</p>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

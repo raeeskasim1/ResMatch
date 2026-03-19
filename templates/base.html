@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ResuMatch{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">R</div>
+                <div>
+                    <h2>ResuMatch</h2>
+                    <p>ATS Dashboard</p>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="/" class="nav-link {% block nav_dashboard %}{% endblock %}">Dashboard</a>
+                <a href="/upload" class="nav-link {% block nav_upload %}{% endblock %}">Upload Resumes</a>
+                <a href="/match-page" class="nav-link {% block nav_match %}{% endblock %}">Match Candidates</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <h1>{% block page_title %}Resume Screening System{% endblock %}</h1>
+                    <p>{% block page_subtitle %}AI-powered resume screening and ranking{% endblock %}</p>
+                </div>
+            </header>
+
+        
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

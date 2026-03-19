@@ -1,0 +1,19 @@
+Ranking Evaluation Metrics
+==========================
+MRR: 1.0000
+NDCG: 1.0000
+NDCG@5: 1.0000
+NDCG@10: 1.0000
+
+Cosine Similarity Distribution Analysis
+======================================
+Matched Scores: [0.7634, 0.7393]
+Unmatched Scores: [0.5526, 0.511, 0.5667]
+Average Matched Similarity: 0.7513
+Average Unmatched Similarity: 0.5434
+
+Processing Time Analysis
+========================
+Total Matching Time: 1.1251 seconds
+Number of Resumes: 5
+Time per Resume: 0.2250 seconds

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+{% block nav_dashboard %}active{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+{% block page_subtitle %}Overview of your resume screening workflow{% endblock %}
+
+{% block content %}
+<div class="dashboard-center">
+    <section class="dashboard-main">
+        <div class="dashboard-icon">R</div>
+
+        <h2>About the System</h2>
+
+        <p>
+            This application indexes resumes and ranks candidates against a job description
+            using semantic similarity, skill matching, experience analysis, and education matching.
+        </p>
+
+        <div class="btn-row center">
+            <a href="/upload" class="btn btn-green">Upload Resumes</a>
+            <a href="/match-page" class="btn btn-blue">Start Matching</a>
+        </div>
+    </section>
+</div>
+{% endblock %}
