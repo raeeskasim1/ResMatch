@@ -42,34 +42,39 @@ resmatch/
 │   ├── vectordb/    
 │   ├── scoring/    
 │   ├── evaluation/    
-│   └── pipeline/    
-│     
+│   └── pipeline/      
 ├── templates/    
 ├── static/    
-├── data/    
-│    
+├── data/       
 ├── requirements.txt    
 ├── README.md      
 ├── .gitignore     
 └── run.py    
 
-⚙️ Setup Instructions
-1. Clone the repository
-git clone https://github.com/<your-username>/resmatch.git
-cd resmatch
-2. Create virtual environment
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/raeeskasim1/ResMatch.git
+cd ResMatch
+```
+
+### 2. Create virtual environment
+```bash
 python -m venv venv
-3. Activate environment
+```
 
-Windows:
+### 3. Activate environment
 
+**Windows:**
+```bash
 venv\Scripts\activate
+```
 
-Mac/Linux:
-
-source venv/bin/activate
-4. Install dependencies
+### 4. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 
 Data Ingestion
