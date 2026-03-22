@@ -35,7 +35,7 @@ ResMatch is designed to handle **large-scale resume screening efficiently**:
 
 - 📄 Resume parsing (PDF, DOCX, TXT)
 - 🧹 Text preprocessing and section extraction
-- 🧠 Structured information extraction (skills, education, experience, certifications)
+- 🧠 Structured information extraction (skills, education, experience)
 - 🔍 Semantic similarity using Sentence Transformers (SBERT)
 
 ### 📊 Multi-factor scoring:
