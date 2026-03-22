@@ -1,36 +1,58 @@
-ResMatch - AI-Powered Resume Screening System    
-📌 Overview
+# ResMatch - AI-Powered Resume Screening System
 
-ResMatch is an AI-powered resume screening and job matching system that analyzes resumes and job descriptions to identify the most suitable candidates.
-It extracts key information such as skills, education, experience, and certifications, and ranks candidates using semantic similarity and rule-based scoring.
+## 📌 Overview
 
-🚀 Features
+ResMatch is an AI-powered resume screening and job matching system that analyzes resumes and job descriptions to identify the most suitable candidates.  
 
-📄 Resume parsing (PDF, DOCX, TXT)
+It extracts key information such as **skills, education, and experience**, and ranks candidates using **semantic similarity and rule-based scoring**.
 
-🧹 Text preprocessing and section extraction
+### 💡 Real-World Usage
 
-🧠 Skill, education, experience, and certification extraction
+ResMatch is designed to handle **large-scale resume screening efficiently**:
 
-🔍 Semantic similarity using Sentence Transformers (SBERT)
+- You can upload **hundreds or even 1000+ resumes**
+- All resumes are **processed, structured, and stored in a vector database (ChromaDB)**
 
-📊 Multi-factor scoring:
+- Once stored, you can:
+  - Paste any **Job Description (JD)**
+  - Instantly retrieve **top matching candidates**
 
-Skill match
+- No need to reprocess resumes again — just change the JD and search again 
 
-Semantic similarity
+---
 
-Experience match
+## ⏱ Processing Time Analysis
 
-Education match
+- Total Matching Time: **1.1251 seconds**  
+- Number of Resumes: **5**  
+- Time per Resume: **0.2250 seconds**  
 
-🏆 Candidate ranking system
+📌 The system is optimized for **fast processing and scalable performance**.
 
-⚡ FastAPI backend
+---
 
-🗂 Vector storage using ChromaDB
+## 🚀 Features
 
-🏗 Project Structure    
+- 📄 Resume parsing (PDF, DOCX, TXT)
+- 🧹 Text preprocessing and section extraction
+- 🧠 Structured information extraction (skills, education, experience, certifications)
+- 🔍 Semantic similarity using Sentence Transformers (SBERT)
+
+### 📊 Multi-factor scoring:
+- Skill match  
+- Semantic similarity  
+- Experience match  
+- Education match  
+
+
+- 🏆 Candidate ranking system  
+- ⚡ FastAPI backend  
+- 🗂 Vector storage using ChromaDB  
+- 🔁 Reusable resume database for multiple job descriptions  
+
+---
+
+## Project Structure    
 resmatch/    
 │     
 ├── app/     
@@ -77,49 +99,35 @@ pip install -r requirements.txt
 ```
 
 
-Data Ingestion
+### Data Ingestion
+  - Extract text from resumes (PDF, DOCX, TXT)
 
-  -Extract text from resumes (PDF, DOCX, TXT)
+### Preprocessing
+  - Clean and normalize text
+  - Split into sections
 
-Preprocessing
+### Information Extraction
+Extract:    
+  - Skills     
+  - Education    
+  - Experience    
 
-  -Clean and normalize text
+### Embedding Generation
+  - Convert text into vector embeddings using Sentence Transformers
 
-  -Split into sections
+### Vector Storage
+  - Store embeddings using ChromaDB
 
-  -Information Extraction
+### Scoring
+  - Skill matching
+  - Semantic similarity
+  - Experience comparison
+  - Education matching
+  
+  ### Ranking
+   - Rank candidates based on final score
 
-Extract:
-
-  -Skills
-
-  -Education
-
-  -Experience
-
-Embedding Generation
-
-  -Convert text into vector embeddings using Sentence Transformers
-
-Vector Storage
-
-  -Store embeddings using ChromaDB
-
-Scoring
-
-  -Skill matching
-
-  -Semantic similarity
-
-  -Experience comparison
-
-  -Education matching
-
-  -Ranking
-
-  -Rank candidates based on final score
-
-📦 Dependencies
+### 📦 Dependencies
 
 Python 3.10+
 
@@ -141,7 +149,7 @@ numpy
 
 pandas
 
-⚠️ Notes
+### ⚠️ Notes
 
 The vector database (chroma_store/) is generated dynamically and not included in the repository.
 
