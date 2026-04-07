@@ -42,7 +42,8 @@ def search_and_rank(jd_text: str, top_k: int = 5):
         metadata={"skills": ",".join(jd_data["skills"])}
     )
 
-    results = query_resumes(jd_embedding, top_k=top_k)
+    retrieve_k = max(20, top_k)
+    results = query_resumes(jd_embedding, top_k=retrieve_k)
 
     ranked = []
     ids = results["ids"][0]
