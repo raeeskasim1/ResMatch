@@ -89,4 +89,4 @@ def search_and_rank(jd_text: str, top_k: int = 5):
         })
 
     ranked.sort(key=lambda x: x["final_score"], reverse=True)
-    return ranked
+    return ranked[:top_k]
